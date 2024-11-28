@@ -1,0 +1,54 @@
+------- Add/Create one car -----------------
+curl --location 'localhost:8080/car/addcar' \
+--header 'Content-Type: application/json' \
+--data '
+   {
+        "companyName": "Mahindra",
+        "carPrice": 2400000.0,
+        "carModelName": "700",
+        "mfgYear": 2022,
+        "fuelType": "Diesal",
+        "carType": "Manual"
+    }
+'
+
+---------------------------------------------
+
+
+---- Add/Create Multiple Car -------------
+curl --location 'localhost:8080/car/addcars' \
+--header 'Content-Type: application/json' \
+--data '[
+   {
+        "companyName": "Mahindra",
+        "carPrice": 1700000.0,
+        "carModelName": "THAR",
+        "mfgYear": 2024,
+        "fuelType": "Diesal",
+        "carType": "Manual"
+    }
+]'
+
+-----------------------------
+
+---------Delete Car ---------
+curl --location --request DELETE 'localhost:8080/car/remove/5'
+
+----------- Update existing car --------------
+curl --location --request PUT 'localhost:8080/car/updatecar/1' \
+--header 'Content-Type: application/json' \
+--data '{
+    "companyName": "Toyota",
+    "carPrice": 1000000.0,
+    "carModelName": "Glanza G",
+    "mfgYear": 2022,
+    "fuelType": "Petrol",
+    "carType": "Manual"
+}'
+
+------------------------------------------------
+
+-------- See all cars ------------------
+
+http://localhost:8080/car/all
+
